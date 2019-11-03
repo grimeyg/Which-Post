@@ -18,6 +18,11 @@ h1 {
   font-size: 30px;
 }
 
+h2 {
+  font-size: 30px;
+  margin-top: 75px;
+}
+
 .name-input-container {
   display: flex;
   flex-direction: column;
@@ -27,7 +32,7 @@ h1 {
 .start{
   display: flex;
   flex-direction: column;
-  background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) ), url(assets/background.jpg) no-repeat;
+  background: linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6) ), url(assets/background.jpg) no-repeat;
   background-size: 100%;
   height: 600px;
   align-items: center;
@@ -38,6 +43,24 @@ h1 {
   height: 40px;
   border: 1px solid black;
   text-align: center;
+}
+
+.page-two {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient( rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75) ), url(assets/background.jpg) no-repeat;
+  background-size: 100%;
+  height: 725px;
+  align-items: center;
+}
+
+.instructions {
+  width: 750px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.75em;
+  letter-spacing: -0.05em;
+  margin-top: 5px;
 }
 
 #icon {
@@ -76,5 +99,13 @@ h1 {
   background-color: #000000;
   height: 40px;
   margin-top: 30px;
-  display: none;
+  opacity: 0;
+}
+
+#play-game-btn-two {
+  width: 58.5%;
+  color: #ffffff;
+  background-color: #000000;
+  height: 40px;
+  margin-top: 30px;
 }
