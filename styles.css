@@ -63,6 +63,12 @@ h2 {
   margin-top: 5px;
 }
 
+.card {
+  background-color: black;
+  width: 200px;
+  height: 200px;
+}
+
 #icon {
   width:5%;
   height: auto;
@@ -70,7 +76,7 @@ h2 {
 }
 
 #center-nav {
-  width:5%;
+  width:5.209%;
 }
 
 #p1-text {
@@ -84,7 +90,6 @@ h2 {
   font-size: 20px;
   align-self: center;
 }
-
 
 #straighten-inputs {
   display: flex;
@@ -108,4 +113,15 @@ h2 {
   background-color: #000000;
   height: 40px;
   margin-top: 30px;
+}
+
+/* this is the css for my 3rd pg */
+.game-page {
+  display: grid;
+  grid-template-areas: "left game right";
+  grid-template-columns: 1fr 3.5fr 1fr;
+}
+
+#p1-left{
+  
 }
