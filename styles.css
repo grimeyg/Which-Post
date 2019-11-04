@@ -64,9 +64,15 @@ h2 {
 }
 
 .card {
-  background-color: black;
-  width: 200px;
-  height: 200px;
+  border: 2px solid red;
+  width: 150px;
+  height: 175px;
+  margin: 35px 50px 15px 50px;
+  background-image: url(assets/card-front.jpg);
+}
+
+.card:active {
+ animation: flip-vertical-fwd 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 #icon {
@@ -116,12 +122,69 @@ h2 {
 }
 
 /* this is the css for my 3rd pg */
+
 .game-page {
   display: grid;
   grid-template-areas: "left game right";
   grid-template-columns: 1fr 3.5fr 1fr;
+  border-top: 2px solid black;
 }
 
-#p1-left{
-  
+.margin {
+  margin-top: 0px;
+}
+
+#p1-left {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+#game-section {
+  grid-area: game;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-image: url(assets/background.jpg);
+  background: linear-gradient( rgba(255, 255, 255, 0.825), rgba(255, 255, 255, 0.825) ), url(assets/background.jpg) no-repeat;
+  background-size: 100%;
+}
+
+#p2-right {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+#cardArray3,
+#cardArray4,
+#cardArray5,
+#cardArray6 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+@keyframes flip-vertical-fwd {
+  0% {
+    transform: translateZ(auto) rotateY(auto);
+  }
+  50% {
+    background-image: url(assets/card-front.jpg);
+  }
+  51%{
+    background-image: url(assets/card2.jpg);
+  }
+  100% {
+    transform: translateZ(1000px) rotateY(180deg);
+    background-image: url(assets/card2.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
 }
