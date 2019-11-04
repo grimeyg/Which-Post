@@ -3,7 +3,8 @@ var playerOneInput = document.querySelector("#p1-input");
 var pageOne = document.querySelector(".start");
 var body = document.querySelector("body");
 var cardArray = [];
-var
+
+
 
 playerOneInput.addEventListener("keyup", allowStart);
 playGameBtn.addEventListener("click", changeToPageTwo);
@@ -70,7 +71,6 @@ function loadGamePage() {
       <h2>GAME WINS</h2>
     </aside>
     <section id="game-section">
-    <script>
     </section>
     <aside id='p2-right'>
       <h2></h2>
@@ -80,24 +80,15 @@ function loadGamePage() {
   </section>
 `;
 insertCards();
+
 for(var i = 0; i < 10; i++){
  randomizeRotation(i)
   }
 }
 
-function insertCards()
-for(i = 0; i < 10; i++){
-
+function insertCards(){
+var cardContainer = document.querySelector("#game-section")
+for(var i = 0; i < 10; i++){
+cardContainer.innerHTML +=`<div id = "cardArray${i}" class="card">${cardArray[i]}</div>`
 }
-
-</script>
-  <div id = "cardArray0" class="card">${cardArray[0]}</div>
-  <div id = "cardArray1" class="card">${cardArray[1]}</div>
-  <div id = "cardArray2" class="card">${cardArray[2]}</div>
-  <div id = "cardArray3" class="card">${cardArray[3]}</div>
-  <div id = "cardArray4" class="card">${cardArray[4]}</div>
-  <div id = "cardArray5" class="card">${cardArray[5]}</div>
-  <div id = "cardArray6" class="card">${cardArray[6]}</div>
-  <div id = "cardArray7" class="card">${cardArray[7]}</div>
-  <div id = "cardArray8" class="card">${cardArray[8]}</div>
-  <div id = "cardArray9" class="card">${cardArray[9]}</div>
+}
