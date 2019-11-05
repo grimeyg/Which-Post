@@ -61,7 +61,10 @@ function loadGamePage() {
     <section class='game-page'>
       <aside id='p1-left'>
         <h2 class="margin">${playerOneInput.value}</h2>
-        <h3>MATCHES THIS ROUND</h3>
+        <div class="box">
+          <h3>MATCHES THIS ROUND</h3>
+          <p class="score">0</p>
+        </div>
         <h2>GAME WINS</h2>
       </aside>
       <section id="game-section">
@@ -82,29 +85,68 @@ function insertCards(){
     cardContainer.innerHTML +=`<div id = "cardArray${i}" class="card">${cardArray[i].matchInfo}</div>`;
     randomizeRotation(i);
   }
-clickCard(cardContainer);
+  clickCard(cardContainer);
+}
+
+var clickHandler = function(event){
+  var cardContainer = document.querySelector("#game-section");
+  if(event.target === cardMatch[0]){
+    null;
+  }else{
+     cardMatch.push(event.target);
+     animateClick(event);
+
+     if(cardMatch.length === 2){
+       event.target.parentNode.removeEventListener("click", clickHandler);
+      // this sleep function removes the EL for the length of the second card animation, then adds it back
+       function sleep(ms) {
+         return new Promise(resolve => setTimeout(resolve, ms));
+       }
+       async function demo() {
+        console.log('Taking a break...');
+        await sleep(3700);
+        clickCard(cardContainer)
+       }
+       demo();
+    }
+  }
 }
 
 function clickCard(cardContainer){
-  cardContainer.addEventListener("click", function(event){
-      if(event.target === cardMatch[0]){
-        null;
-      }else{
-        cardMatch.push(event.target);
-        if(cardMatch.length === 2){
-        checkForMatch();
+  cardContainer.addEventListener("click", clickHandler)
+}
+
+function animateClick(event){
+  if(event.target.classList.contains("card")){
+    event.target.classList.add("flip-fwd");
+    if(cardMatch.length === 1){ null;
+    }else{
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
       }
+      async function demo() {
+       console.log('Taking a break...');
+      await sleep(900);
+       event.target.classList.remove("flip-fwd");
+       event.target.classList.add("flip-back");
+       cardMatch[0].classList.remove("flip-fwd");
+       cardMatch[0].classList.add("flip-back");
+       checkForMatch();
+      }
+      demo();
     }
-  })
+  }
 }
 
 function checkForMatch() {
   if (cardMatch[0].innerText === cardMatch[1].innerText){
       console.log("match");
-      cardMatch.splice(0,2)
-  }else{
-    cardMatch.splice(0,2)
+
+
+
+
   }
+  cardMatch.splice(0,2)
 }
 
 function randomizeRotation(cardNum) {
