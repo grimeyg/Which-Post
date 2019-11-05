@@ -160,6 +160,12 @@ h3 {
   border-bottom: 2px solid white;
 }
 
+.congrats {
+  font-size: 40px;
+  text-align: center;
+  margin: 45px 10px 0px 10px;
+}
+
 #p1-left {
   grid-area: left;
   display: flex;
