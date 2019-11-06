@@ -71,19 +71,60 @@ h2 {
   background-image: url(assets/card-front.jpg);
 }
 
-.flip-back {
-  animation: flip-vertical-back .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+.flip-back0 {
+  animation: flip-vertical-back-1 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   animation-delay: 2.1s;
 }
 
-.flip-fwd {
- animation: flip-vertical-fwd .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+.flip-fwd0 {
+ animation: flip-vertical-fwd-1 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.flip-back1 {
+  animation: flip-vertical-back-2 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 2.1s;
+}
+
+.flip-fwd1 {
+ animation: flip-vertical-fwd-2 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.flip-back2 {
+  animation: flip-vertical-back-3 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 2.1s;
+}
+
+.flip-fwd2 {
+ animation: flip-vertical-fwd-3 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.flip-back3 {
+  animation: flip-vertical-back-4 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 2.1s;
+}
+
+.flip-fwd3 {
+ animation: flip-vertical-fwd-4 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.flip-back4 {
+  animation: flip-vertical-back-5 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 2.1s;
+}
+
+.flip-fwd4 {
+ animation: flip-vertical-fwd-5 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 #icon {
   width:5%;
   height: auto;
   border-right: 3px solid black;
+  background-color: yellow;
+  background-image: url("assets/menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #center-nav {
@@ -222,7 +263,51 @@ h3 {
   margin-right: 8px;
 }
 
-@keyframes flip-vertical-fwd {
+@keyframes flip-vertical-fwd-1 {
+  0% {
+  }
+  50% {
+    background-image: url(assets/card-front.jpg);
+  }
+  50.5%{
+    background-image: url(assets/card1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+  100% {
+    transform: rotateY(180deg);
+    background-image: url(assets/card1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+}
+
+@keyframes flip-vertical-back-1 {
+  0% {
+    background-image: url(assets/card1.jpg);
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+  50%{
+    background-image: url(assets/card1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+  50.5% {
+    background-image: url(assets/card-front.jpg);
+  }
+  100% {
+    transform: rotateY(0deg);
+    background-image: url(assets/card-front.jpg);
+  }
+}
+
+@keyframes flip-vertical-fwd-2 {
   0% {
   }
   50% {
@@ -232,24 +317,152 @@ h3 {
     background-image: url(assets/card2.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+    background-position: center;
   }
   100% {
     transform: rotateY(180deg);
     background-image: url(assets/card2.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+    background-position: center;
   }
 }
 
-@keyframes flip-vertical-back {
+@keyframes flip-vertical-back-2 {
   0% {
     background-image: url(assets/card2.jpg);
     transform: rotateY(180deg);
     background-repeat: no-repeat;
     background-size:cover;
+    background-position: center;
   }
   50%{
     background-image: url(assets/card2.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+  50.5% {
+    background-image: url(assets/card-front.jpg);
+  }
+  100% {
+    transform: rotateY(0deg);
+    background-image: url(assets/card-front.jpg);
+  }
+}
+
+@keyframes flip-vertical-fwd-3 {
+  0% {
+  }
+  50% {
+    background-image: url(assets/card-front.jpg);
+  }
+  50.5%{
+    background-image: url(assets/card3.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  100% {
+    transform: rotateY(180deg);
+    background-image: url(assets/card3.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+}
+
+@keyframes flip-vertical-back-3 {
+  0% {
+    background-image: url(assets/card3.jpg);
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  50%{
+    background-image: url(assets/card3.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  50.5% {
+    background-image: url(assets/card-front.jpg);
+  }
+  100% {
+    transform: rotateY(0deg);
+    background-image: url(assets/card-front.jpg);
+  }
+}
+
+@keyframes flip-vertical-fwd-4 {
+  0% {
+  }
+  50% {
+    background-image: url(assets/card-front.jpg);
+  }
+  50.5%{
+    background-image: url(assets/card4.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+  100% {
+    transform: rotateY(180deg);
+    background-image: url(assets/card4.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+}
+
+@keyframes flip-vertical-back-4 {
+  0% {
+    background-image: url(assets/card4.jpg);
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+  50%{
+    background-image: url(assets/card4.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+  50.5% {
+    background-image: url(assets/card-front.jpg);
+  }
+  100% {
+    transform: rotateY(0deg);
+    background-image: url(assets/card-front.jpg);
+  }
+}
+
+@keyframes flip-vertical-fwd-5 {
+  0% {
+  }
+  50% {
+    background-image: url(assets/card-front.jpg);
+  }
+  50.5%{
+    background-image: url(assets/card5.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  100% {
+    transform: rotateY(180deg);
+    background-image: url(assets/card5.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+}
+
+@keyframes flip-vertical-back-5 {
+  0% {
+    background-image: url(assets/card5.jpg);
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  50%{
+    background-image: url(assets/card5.jpg);
     background-repeat: no-repeat;
     background-size:cover;
   }

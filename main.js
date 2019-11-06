@@ -1,4 +1,5 @@
 var playGameBtn = document.querySelector("#play-game-btn");
+playGameBtn.disabled = true;
 var playerOneInput = document.querySelector("#p1-input");
 var pageOne = document.querySelector(".start");
 var body = document.querySelector("body");
@@ -6,13 +7,30 @@ var cardArray = [];
 var cardMatch = [];
 var nums = []
 var seconds = 0;
+var o = null;
 
+window.addEventListener("load", checkLocalStorage);
 playerOneInput.addEventListener("keyup", allowStart);
 playGameBtn.addEventListener("click", changeToPageTwo);
 
+function checkLocalStorage(){
+  var p1Name = localStorage.getItem("p1");
+  var nameInInput = JSON.parse(p1Name)
+  insertName(nameInInput);
+  if(playerOneInput.value === nameInInput){
+    allowStart();
+  }
+}
+
+function insertName(nameInInput){
+  playerOneInput.value = nameInInput;
+}
+
 function allowStart(){
   playGameBtn.style.opacity = "1";
+  playGameBtn.disabled = false;
 }
+
 
 function changeToPageTwo(){
   pageOne.parentNode.removeChild(pageOne);
@@ -20,6 +38,8 @@ function changeToPageTwo(){
 }
 
 function loadPageTwo(){
+  var p1NameString = JSON.stringify(playerOneInput.value)
+  localStorage.setItem("p1", p1NameString)
   body.innerHTML += `
     <section class="page-two">
       <h2>WELCOME ${playerOneInput.value} AND PLAYER 2!</h2>
@@ -90,7 +110,7 @@ function insertCards(){
   clearInterval(count);
   var count = setInterval(timer.startTimer, 1000);
   var startMsg = document.querySelector("#start-msg")
-  startMsg.innerHTML = "";
+  startMsg.style.display ="none";
   var cardContainer = document.querySelector("#game-section");
 
   for (var a = Math.floor(Math.random() * 10); nums.length < 10; a = Math.floor(Math.random() * 10)){
@@ -133,10 +153,10 @@ function clickCard(cardContainer){
 }
 
 function animateClick(event, cardContainer){
-  event.target.classList.add("flip-fwd");
+  event.target.classList.add(`flip-fwd${event.target.innerText}`);
   // stay flipped if only one card is selected
   if(cardMatch.length === 1){
-    null;
+     o = event.target;
   }else{
     // allow flip-fwd animation of 2nd card to go through
     function sleep(ms) {
@@ -145,10 +165,10 @@ function animateClick(event, cardContainer){
     async function demo() {
       console.log('Taking a break...');
       await sleep(900);
-      event.target.classList.remove("flip-fwd");
-      event.target.classList.add("flip-back");
-      cardMatch[0].classList.remove("flip-fwd");
-      cardMatch[0].classList.add("flip-back");
+      event.target.classList.remove(`flip-fwd${event.target.innerText}`);
+      event.target.classList.add(`flip-back${event.target.innerText}`);
+      o.classList.remove(`flip-fwd${o.innerText}`);
+      o.classList.add(`flip-back${o.innerText}`);
       checkForMatch(cardContainer);
     }
     demo();
@@ -176,7 +196,6 @@ function checkForMatch(cardContainer) {
 function removeCards(cardContainer) {
   cardContainer.removeChild(cardMatch[1]);
   cardContainer.removeChild(cardMatch[0]);
-
 }
 
 function randomizeRotation(cardNum) {
