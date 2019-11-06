@@ -4,6 +4,8 @@ var pageOne = document.querySelector(".start");
 var body = document.querySelector("body");
 var cardArray = [];
 var cardMatch = [];
+var nums = []
+var seconds = 0;
 
 playerOneInput.addEventListener("keyup", allowStart);
 playGameBtn.addEventListener("click", changeToPageTwo);
@@ -66,6 +68,12 @@ function loadGamePage() {
         <h2>GAME WINS</h2>
       </aside>
       <section id="game-section">
+      <div id="start-msg">
+        <p>Welcome ${playerOneInput.value}, when you click this button the game
+           will start and your time will be recorded. Good Luck!
+        </p>
+        <input class="start-time" type="button" value="Start">
+      </div>
       </section>
       <aside id='p2-right'>
         <h2></h2>
@@ -74,14 +82,25 @@ function loadGamePage() {
       </aside>
     </section>
   `;
-  insertCards();
+  var startTimeBtn = document.querySelector(".start-time")
+  startTimeBtn.addEventListener ("click", insertCards)
 }
 
 function insertCards(){
+  clearInterval(count);
+  var count = setInterval(timer.startTimer, 1000);
+  var startMsg = document.querySelector("#start-msg")
+  startMsg.innerHTML = "";
   var cardContainer = document.querySelector("#game-section");
+
+  for (var a = Math.floor(Math.random() * 10); nums.length < 10; a = Math.floor(Math.random() * 10)){
+    if(!nums.includes(a)){
+      nums.push(a);
+    }
+  }
   for(var i = 0; i < 10; i++){
-    cardContainer.innerHTML +=`<div id = "cardArray${i}" class="card">${cardArray[i].matchInfo}</div>`;
-    randomizeRotation(i);
+    cardContainer.innerHTML +=`<div id = "cardArray${nums[i]}" class="card">${cardArray[nums[i]].matchInfo}</div>`;
+    randomizeRotation(nums[i]);
   }
   clickCard(cardContainer);
 }
@@ -93,7 +112,6 @@ var clickHandler = function(event){
   }else if (event.target.classList.contains("card")){
      cardMatch.push(event.target);
      animateClick(event, cardContainer);
-
      if(cardMatch.length === 2){
        event.target.parentNode.removeEventListener("click", clickHandler);
       // this sleep function removes the EL for the length of the second card animation, then adds it back
@@ -102,7 +120,7 @@ var clickHandler = function(event){
        }
        async function demo() {
         console.log('Taking a break...');
-        await sleep(3700);
+        await sleep(3100);
         clickCard(cardContainer)
        }
        demo();
@@ -172,9 +190,31 @@ function randomizeRotation(cardNum) {
 
 function checkForGameOver (p1ScoreNum, cardContainer){
   if(p1ScoreNum === 5){
+    var timeMin = 0;
+    var timeSec = timer.endTimer();
+    if(timeSec > 59){
+      timeMin = Math.floor(timeSec / 60);
+      timeSec = timeSec % 60;
+    }
+    if (timeMin === 1){
     cardContainer.innerHTML += `
       <p class="congrats"> Congratulations ${playerOneInput.value} you have smashed
-      this gaming challenge! 🤙
+      this gaming challenge! 🤙 It took you ${timeMin} minute and ${timeSec} seconds.
     `
+    }else{
+      cardContainer.innerHTML += `
+        <p class="congrats"> Congratulations ${playerOneInput.value} you have smashed
+        this gaming challenge! 🤙 It took you ${timeMin} minutes and ${timeSec} seconds.
+      `
+    }
+  }
+}
+
+var timer = {
+  startTimer(){
+    seconds ++;
+  },
+  endTimer(){
+    return seconds;
   }
 }

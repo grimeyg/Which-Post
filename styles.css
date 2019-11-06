@@ -73,7 +73,7 @@ h2 {
 
 .flip-back {
   animation: flip-vertical-back .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  animation-delay: 2.9s;
+  animation-delay: 2.1s;
 }
 
 .flip-fwd {
@@ -164,6 +164,24 @@ h3 {
   font-size: 40px;
   text-align: center;
   margin: 45px 10px 0px 10px;
+  letter-spacing: 0.05em;
+}
+
+.start-time {
+  width:50%;
+  height:10%;
+  background-color: yellow;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+#start-msg {
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  width: 80%;
+  text-align: center;
+  align-items: center;
 }
 
 #p1-left {
@@ -183,7 +201,8 @@ h3 {
   justify-content: space-around;
   background-image: url(assets/background.jpg);
   background: linear-gradient( rgba(255, 255, 255, 0.825), rgba(255, 255, 255, 0.825) ), url(assets/background.jpg) no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  height: 700px;
 }
 
 #p2-right {
