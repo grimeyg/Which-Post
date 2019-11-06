@@ -69,6 +69,7 @@ h2 {
   height: 175px;
   margin: 35px 50px 15px 50px;
   width: 150px;
+  color: transparent;
 }
 
 .flip-back0 {
@@ -241,15 +242,15 @@ h3 {
 }
 
 #game-section {
-  background: linear-gradient( rgba(255, 255, 255, 0.825), rgba(255, 255, 255, 0.825) ), url(assets/background.jpg) no-repeat;
-  background-image: url(assets/background.jpg);
-  background-size: cover;
+  grid-area: game;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  grid-area: game;
-  height: 700px;
   justify-content: space-around;
+  background-image: url(assets/background.jpg);
+  background: linear-gradient( rgba(255, 255, 255, 0.825), rgba(255, 255, 255, 0.825) ), url(assets/background.jpg) no-repeat;
+  background-size: cover;
+  height: 700px;
 }
 
 #p2-right {
