@@ -158,7 +158,7 @@ var clickHandler = function(event){
        }
        async function demo() {
         console.log('Taking a break...');
-        await sleep(3100);
+        await sleep(2900);
         clickCard(cardContainer)
        }
        demo();

@@ -73,48 +73,48 @@ h2 {
 }
 
 .flip-back0 {
-  animation: flip-vertical-back-1 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  animation-delay: 2.1s;
+  animation: flip-vertical-back-1 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 1.7s;
 }
 
 .flip-fwd0 {
- animation: flip-vertical-fwd-1 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+ animation: flip-vertical-fwd-1 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .flip-back1 {
-  animation: flip-vertical-back-2 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  animation-delay: 2.1s;
+  animation: flip-vertical-back-2 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 1.7s;
 }
 
 .flip-fwd1 {
- animation: flip-vertical-fwd-2 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+ animation: flip-vertical-fwd-2 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .flip-back2 {
-  animation: flip-vertical-back-3 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  animation-delay: 2.1s;
+  animation: flip-vertical-back-3 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 1.7s;
 }
 
 .flip-fwd2 {
- animation: flip-vertical-fwd-3 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+ animation: flip-vertical-fwd-3 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .flip-back3 {
-  animation: flip-vertical-back-4 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  animation-delay: 2.1s;
+  animation: flip-vertical-back-4 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 1.7s;
 }
 
 .flip-fwd3 {
- animation: flip-vertical-fwd-4 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+ animation: flip-vertical-fwd-4 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 .flip-back4 {
-  animation: flip-vertical-back-5 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  animation-delay: 2.1s;
+  animation: flip-vertical-back-5 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation-delay: 1.7s;
 }
 
 .flip-fwd4 {
- animation: flip-vertical-fwd-5 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+ animation: flip-vertical-fwd-5 .6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 #scores {
