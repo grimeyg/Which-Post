@@ -5,21 +5,34 @@ var pageOne = document.querySelector(".start");
 var body = document.querySelector("body");
 var cardArray = [];
 var cardMatch = [];
-var nums = []
+var nums = [];
+var top5 = [];
 var seconds = 0;
 var o = null;
+var highScoreBtn = document.querySelector("#icon");
+var hS1 = document.querySelector("#hs1");
+var siteTitle = document.querySelector("h1");
+var scoreContainer = document.querySelector("#scores");
 
 window.addEventListener("load", checkLocalStorage);
 playerOneInput.addEventListener("keyup", allowStart);
 playGameBtn.addEventListener("click", changeToPageTwo);
+highScoreBtn.addEventListener("click", showScores);
 
 function checkLocalStorage(){
   var p1Name = localStorage.getItem("p1");
-  var nameInInput = JSON.parse(p1Name)
+  var nameInInput = JSON.parse(p1Name);
+  var hSObject = localStorage.getItem("playerTime");
+  var score = JSON.parse(hSObject);
+  insertHS(score);
   insertName(nameInInput);
   if(playerOneInput.value === nameInInput){
     allowStart();
   }
+}
+
+function insertHS (score){
+  hS1.innerText = score;
 }
 
 function insertName(nameInInput){
@@ -31,6 +44,15 @@ function allowStart(){
   playGameBtn.disabled = false;
 }
 
+function showScores(){
+  if (scoreContainer.style.display === "none"){
+    siteTitle.style.display = "none";
+    scoreContainer.style.display = "flex";
+  }else{
+    siteTitle.style.display = "inline-flex"
+    scoreContainer.style.display = "none";
+  }
+}
 
 function changeToPageTwo(){
   pageOne.parentNode.removeChild(pageOne);
@@ -42,14 +64,14 @@ function loadPageTwo(){
   localStorage.setItem("p1", p1NameString)
   body.innerHTML += `
     <section class="page-two">
-      <h2>WELCOME ${playerOneInput.value} AND PLAYER 2!</h2>
+      <h2>WELCOME ${playerOneInput.value}!</h2>
       <p class="instructions">The goal of the game is to find all 5 pairs of cards as quickly as possible.
          The player that finds the greatest number of pairs, wins.</p>
       <p class="instructions">To begin playing, the player whose name is highlighted can click any card in
          the card pile. It will flip over and reveal a picture of Post Malone. Click
          another card. If they match, they will disappear and you will have completed
-         a match! If they don't, you'll have three seconds to look at them before they
-         flip back over. Then it's time for the other player to try!</p>
+         a match! If they don't, you'll have two seconds to look at them before they
+         flip back over.</p>
       <p class="instructions">After you play, you'll see the name of the final winner and how long it took
          to win the game.</p>
       <input id="play-game-btn-two" type="button" value="PLAY GAME"></input>
@@ -74,7 +96,6 @@ function makeCards(){
   cardArray = cardArray.concat(cardArray);
 }
 
-
 function loadGamePage() {
   body.style.backgroundColor = "black";
   body.innerHTML += `
@@ -96,9 +117,6 @@ function loadGamePage() {
       </div>
       </section>
       <aside id='p2-right'>
-        <h2></h2>
-        <h3>MATCHES THIS ROUND</h3>
-        <h2>GAME WINS</h2>
       </aside>
     </section>
   `;
@@ -211,6 +229,11 @@ function checkForGameOver (p1ScoreNum, cardContainer){
   if(p1ScoreNum === 5){
     var timeMin = 0;
     var timeSec = timer.endTimer();
+    var highScoreObject = {
+      time: timeSec,
+      name: playerOneInput.value
+    };
+    addScoreToList(highScoreObject);
     if(timeSec > 59){
       timeMin = Math.floor(timeSec / 60);
       timeSec = timeSec % 60;
@@ -227,6 +250,12 @@ function checkForGameOver (p1ScoreNum, cardContainer){
       `
     }
   }
+}
+
+function addScoreToList(highScoreObject){
+  var highScore = JSON.stringify(highScoreObject);
+  localStorage.setItem("playerTime", highScore);
+  top5.push(highScoreObject);
 }
 
 var timer = {

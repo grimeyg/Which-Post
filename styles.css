@@ -1,15 +1,15 @@
 body {
-  margin: 0px auto;
   background-color: yellow;
   font-family:"Open Sans";
+  margin: 0px auto;
 }
 
 nav {
+  background-color: yellow;
   display: flex;
+  height:60px;
   justify-content: space-between;
   width: 100%;
-  background-color: yellow;
-  height:60px;
 }
 
 h1 {
@@ -30,45 +30,45 @@ h2 {
 }
 
 .start{
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   background: linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6) ), url(assets/background.jpg) no-repeat;
   background-size: 100%;
+  display: flex;
+  flex-direction: column;
   height: 600px;
-  align-items: center;
   justify-content: center;
 }
 
 .input {
-  height: 40px;
   border: 1px solid black;
+  height: 40px;
   text-align: center;
 }
 
 .page-two {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   background: linear-gradient( rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75) ), url(assets/background.jpg) no-repeat;
   background-size: 100%;
+  display: flex;
+  flex-direction: column;
   height: 725px;
-  align-items: center;
 }
 
 .instructions {
-  width: 750px;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.75em;
-  letter-spacing: -0.05em;
   margin-top: 5px;
+  letter-spacing: -0.05em;
+  width: 750px;
 }
 
 .card {
+  background-image: url(assets/card-front.jpg);
   border: 2px solid red;
-  width: 150px;
   height: 175px;
   margin: 35px 50px 15px 50px;
-  background-image: url(assets/card-front.jpg);
+  width: 150px;
 }
 
 .flip-back0 {
@@ -116,15 +116,21 @@ h2 {
  animation: flip-vertical-fwd-5 .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
+#scores {
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 #icon {
-  width:5%;
-  height: auto;
-  border-right: 3px solid black;
   background-color: yellow;
   background-image: url("assets/menu.svg");
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  border-right: 3px solid black;
+  height: auto;
+  width:5%;
 }
 
 #center-nav {
@@ -132,15 +138,15 @@ h2 {
 }
 
 #p1-text {
+  align-self: center;
   color: red;
   font-size: 20px;
-  align-self: center;
 }
 
 #p2-text {
+  align-self: center;
   color: blue;
   font-size: 20px;
-  align-self: center;
 }
 
 #straighten-inputs {
@@ -151,35 +157,35 @@ h2 {
 }
 
 #play-game-btn {
-  width: 58.5%;
-  color: #ffffff;
   background-color: #000000;
+  color: #ffffff;
   height: 40px;
   margin-top: 30px;
   opacity: 0;
+  width: 58.5%;
 }
 
 #play-game-btn-two {
-  width: 58.5%;
-  color: #ffffff;
   background-color: #000000;
+  color: #ffffff;
   height: 40px;
   margin-top: 30px;
+  width: 58.5%;
 }
 
 /* this is the css for my 3rd pg */
 h3 {
-  margin-bottom: 5px;
   font-size: 22px;
   font-weight: 500;
+  margin-bottom: 5px;
   text-align: center;
 }
 
 .game-page {
+  border-top: 2px solid black;
   display: grid;
   grid-template-areas: "left game right";
   grid-template-columns: 1fr 3.5fr 1fr;
-  border-top: 2px solid black;
 }
 
 .margin {
@@ -193,66 +199,66 @@ h3 {
 }
 
 .box {
+  align-items: center;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
 }
 
 .congrats {
   font-size: 40px;
-  text-align: center;
-  margin: 45px 10px 0px 10px;
   letter-spacing: 0.05em;
+  margin: 45px 10px 0px 10px;
+  text-align: center;
 }
 
 .start-time {
-  width:50%;
-  height:10%;
   background-color: yellow;
+  height:10%;
   font-size: 24px;
   font-weight: 800;
+  width:50%;
 }
 
 #start-msg {
+  align-items: center;
   display: flex;
   flex-direction: column;
   font-size: 40px;
-  width: 80%;
   text-align: center;
-  align-items: center;
+  width: 80%;
 }
 
 #p1-left {
-  grid-area: left;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   background-color: black;
   color: white;
+  display: flex;
+  flex-direction: column;
+  grid-area: left;
 }
 
 #game-section {
-  grid-area: game;
+  background: linear-gradient( rgba(255, 255, 255, 0.825), rgba(255, 255, 255, 0.825) ), url(assets/background.jpg) no-repeat;
+  background-image: url(assets/background.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  background-image: url(assets/background.jpg);
-  background: linear-gradient( rgba(255, 255, 255, 0.825), rgba(255, 255, 255, 0.825) ), url(assets/background.jpg) no-repeat;
-  background-size: cover;
+  grid-area: game;
   height: 700px;
+  justify-content: space-around;
 }
 
 #p2-right {
-  grid-area: right;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   background-color: black;
   color: white;
+  display: flex;
+  flex-direction: column;
+  grid-area: right;
 }
 
 #cardArray3,
@@ -271,39 +277,39 @@ h3 {
   }
   50.5%{
     background-image: url(assets/card1.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
   }
   100% {
-    transform: rotateY(180deg);
     background-image: url(assets/card1.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
+    transform: rotateY(180deg);
   }
 }
 
 @keyframes flip-vertical-back-1 {
   0% {
     background-image: url(assets/card1.jpg);
-    transform: rotateY(180deg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
+    transform: rotateY(180deg);
   }
   50%{
     background-image: url(assets/card1.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
   }
   50.5% {
     background-image: url(assets/card-front.jpg);
   }
   100% {
-    transform: rotateY(0deg);
     background-image: url(assets/card-front.jpg);
+    transform: rotateY(0deg);
   }
 }
 
@@ -315,39 +321,39 @@ h3 {
   }
   50.5%{
     background-image: url(assets/card2.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
   }
   100% {
-    transform: rotateY(180deg);
     background-image: url(assets/card2.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
+    transform: rotateY(180deg);
   }
 }
 
 @keyframes flip-vertical-back-2 {
   0% {
     background-image: url(assets/card2.jpg);
-    transform: rotateY(180deg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
+    transform: rotateY(180deg);
   }
   50%{
     background-image: url(assets/card2.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
   }
   50.5% {
     background-image: url(assets/card-front.jpg);
   }
   100% {
-    transform: rotateY(0deg);
     background-image: url(assets/card-front.jpg);
+    transform: rotateY(0deg);
   }
 }
 
@@ -363,19 +369,19 @@ h3 {
     background-size:cover;
   }
   100% {
-    transform: rotateY(180deg);
     background-image: url(assets/card3.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+    transform: rotateY(180deg);
   }
 }
 
 @keyframes flip-vertical-back-3 {
   0% {
     background-image: url(assets/card3.jpg);
-    transform: rotateY(180deg);
     background-repeat: no-repeat;
     background-size:cover;
+    transform: rotateY(180deg);
   }
   50%{
     background-image: url(assets/card3.jpg);
@@ -386,8 +392,8 @@ h3 {
     background-image: url(assets/card-front.jpg);
   }
   100% {
-    transform: rotateY(0deg);
     background-image: url(assets/card-front.jpg);
+    transform: rotateY(0deg);
   }
 }
 
@@ -399,39 +405,39 @@ h3 {
   }
   50.5%{
     background-image: url(assets/card4.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
   }
   100% {
-    transform: rotateY(180deg);
     background-image: url(assets/card4.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
+    transform: rotateY(180deg);
   }
 }
 
 @keyframes flip-vertical-back-4 {
   0% {
     background-image: url(assets/card4.jpg);
-    transform: rotateY(180deg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
+    transform: rotateY(180deg);
   }
   50%{
     background-image: url(assets/card4.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: center;
   }
   50.5% {
     background-image: url(assets/card-front.jpg);
   }
   100% {
-    transform: rotateY(0deg);
     background-image: url(assets/card-front.jpg);
+    transform: rotateY(0deg);
   }
 }
 
@@ -447,19 +453,19 @@ h3 {
     background-size:cover;
   }
   100% {
-    transform: rotateY(180deg);
     background-image: url(assets/card5.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+    transform: rotateY(180deg);
   }
 }
 
 @keyframes flip-vertical-back-5 {
   0% {
     background-image: url(assets/card5.jpg);
-    transform: rotateY(180deg);
     background-repeat: no-repeat;
     background-size:cover;
+    transform: rotateY(180deg);
   }
   50%{
     background-image: url(assets/card5.jpg);
@@ -470,7 +476,7 @@ h3 {
     background-image: url(assets/card-front.jpg);
   }
   100% {
-    transform: rotateY(0deg);
     background-image: url(assets/card-front.jpg);
+    transform: rotateY(0deg);
   }
 }
